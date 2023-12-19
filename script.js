@@ -9,8 +9,13 @@ function calculate(btnValue) {
         return
     }
     else if (btnValue === "=" && output !== "") {
-      let result = eval(output.replace("%", "/100"));
-      output = (result.toFixed(2))
+        let result = eval(output.replace("%", "/100"));
+        if(Number.isInteger(result)){
+           output = result
+        }
+        else{
+            output = result.toFixed(2)
+        }
     }
     else if (btnValue === 'Ac') {
         output = '';
