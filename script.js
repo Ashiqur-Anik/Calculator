@@ -9,7 +9,8 @@ function calculate(btnValue) {
         return
     }
     else if (btnValue === "=" && output !== "") {
-        output = eval(output.replace("%", "/100"))
+      let result = eval(output.replace("%", "/100"));
+      output = (result.toFixed(2))
     }
     else if (btnValue === 'Ac') {
         output = '';
